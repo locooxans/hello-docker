@@ -1,0 +1,24 @@
+<!doctype html>
+<htmllang="tr">
+<head>
+<metacharset="utf-8">
+<title>DockerFlask Uygulaması</title>
+<linkrel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>DockerFlask Uygulaması</h1>
+
+<formmethod="POST">
+<inputtype="text" name="isim" placeholder="Adınızı girin" required>
+<inputtype="text" name="mesaj" placeholder="Mesajınızı girin" required>
+<buttontype="submit">Gönder</button>
+</form>
+
+<h3>Gönderilen Mesajlar</h3>
+<ul>
+        {% foritem in mesajlar %}
+<li><b>{{ item.isim }}</b>: {{ item.mesaj }}</li>
+        {% endfor %}
+</ul>
+</body>
+</html>
